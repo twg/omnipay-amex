@@ -25,7 +25,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Omnipay\\Exact\\" : "src/" }
+        "psr-4": { "Omnipay\\Amex\\" : "src/" }
     },
     "require": {
         "omnipay/common": "~2.0"
