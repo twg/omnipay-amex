@@ -76,4 +76,24 @@ class GatewayTest extends GatewayTestCase
         $this->assertSame('2', $response->getCode());
         $this->assertSame('Declined', $response->getMessage());
     }
+
+    public function testCaptureApproved()
+    {
+        $this->setMockHttpResponse('CaptureApproved.txt');
+        $request = $this->gateway->capture(array(
+          'amount' => '1.00',
+          'orderId' => '124',
+          'merchTxnRef' => '124'
+        ));
+
+        $this->assertInstanceOf('\Omnipay\Amex\Message\CaptureRequest', $request);
+        $this->assertSame('1.00', $request->getAmount());
+
+        $response = $request->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('3922', $response->getTransactionReference());
+        $this->assertTrue($response->isApproved());
+        $this->assertSame('Approved', $response->getMessage());
+    }
 }

@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Expires: Sun, 15 Jul 1990 00:00:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: text/plain;charset=iso-8859-1
+Content-Length: 392
+Date: Mon, 29 Dec 2014 15:57:39 GMT
+Server: Apache
+
+vpc_AcqResponseCode=000&vpc_Amount=100&vpc_AuthorisedAmount=100&vpc_BatchNo=693&vpc_CapturedAmount=100&vpc_Card=AE&vpc_Command=capture&vpc_Locale=en_US&vpc_MerchTxnRef=124&vpc_Merchant=TEST&vpc_Message=Approved&vpc_OrderInfo=124&vpc_ReceiptNo=1412291564&vpc_RefundedAmount=0&vpc_ShopTransactionNo=3917&vpc_TransactionNo=3922&vpc_TxnResponseCode=0&vpc_Version=1&vpc_terminalID=00840
