@@ -13,6 +13,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     public function getData()
     {
+        $this->validate('orderId', 'merchTxnRef');
         $data = array(
             'vpc_AccessCode'  => $this->getAccessCode(),
             'vpc_Command'     => $this->getCommand(),

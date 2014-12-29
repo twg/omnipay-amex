@@ -8,4 +8,10 @@ class AuthorizeRequest extends AbstractRequest
     {
         return 'pay';
     }
+
+    public function getData()
+    {
+        $this->validate('amount', 'card');
+        return parent::getData();
+    }
 }

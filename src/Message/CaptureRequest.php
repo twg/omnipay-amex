@@ -26,5 +26,4 @@ class CaptureRequest extends AbstractRequest
     {
         return $this->setParameter('transactionNo', $value);
     }
-
 }

@@ -62,6 +62,7 @@ class GatewayTest extends GatewayTestCase
         $request = $this->gateway->authorize(array(
           'amount' => '1.00',
           'orderId' => '123',
+          'merchTxnRef' => '123',
           'card'   => $this->getValidCard()
         ));
 
@@ -83,7 +84,8 @@ class GatewayTest extends GatewayTestCase
         $request = $this->gateway->capture(array(
           'amount' => '1.00',
           'orderId' => '124',
-          'merchTxnRef' => '124'
+          'merchTxnRef' => '124',
+          'transactionNo' => '3000'
         ));
 
         $this->assertInstanceOf('\Omnipay\Amex\Message\CaptureRequest', $request);
