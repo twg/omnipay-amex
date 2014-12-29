@@ -28,4 +28,9 @@ class Response extends \Omnipay\Common\Message\AbstractResponse
     {
         return $this->data['vpc_TxnResponseCode'] == 0;
     }
+
+    public function getMerchTxnRef()
+    {
+        return $this->data['vpc_MerchTxnRef'];
+    }
 }
