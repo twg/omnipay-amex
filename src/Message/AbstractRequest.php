@@ -3,7 +3,7 @@
 namespace Omnipay\Amex\Message;
 
 /**
- *  E-xact Request
+ *  Amex Request
  */
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {

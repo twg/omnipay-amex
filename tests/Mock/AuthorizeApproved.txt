@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Expires: Sun, 15 Jul 1990 00:00:00 GMT
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: text/plain;charset=iso-8859-1
+Content-Length: 475
+Date: Mon, 29 Dec 2014 14:05:41 GMT
+Server: Apache
+
+vpc_AVSRequestCode=Z&vpc_AVSResultCode=Unsupported&vpc_AcqAVSRespCode=Unsupported&vpc_AcqCSCRespCode=N&vpc_AcqResponseCode=000&vpc_AcquirerResponseAdvice=Approved+&vpc_Amount=100&vpc_AuthorizeId=146137&vpc_BatchNo=693&vpc_CSCRequestCode=S&vpc_CSCResultCode=N&vpc_Card=AE&vpc_Command=pay&vpc_Locale=en_CA&vpc_MerchTxnRef=123&vpc_Merchant=TEST&vpc_Message=Approved&vpc_OrderInfo=123&vpc_ReceiptNo=1412291560&vpc_TransactionNo=3911&vpc_TxnResponseCode=0&vpc_Version=1

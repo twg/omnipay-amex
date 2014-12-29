@@ -35,6 +35,27 @@ class GatewayTest extends GatewayTestCase
         }
     }
 
+    public function testAuthorizeApproved()
+    {
+        $this->setMockHttpResponse('AuthorizeApproved.txt');
+        $request = $this->gateway->authorize(array(
+          'amount' => '1.00',
+          'orderId' => '123',
+          'merchTxnRef' => '123',
+          'card'   => $this->getValidCard()
+        ));
+
+        $this->assertInstanceOf('\Omnipay\Amex\Message\AuthorizeRequest', $request);
+        $this->assertSame('1.00', $request->getAmount());
+
+        $response = $request->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('3911', $response->getTransactionReference());
+        $this->assertTrue($response->isApproved());
+        $this->assertSame('Approved', $response->getMessage());
+    }
+
     public function testAuthorizeDeclined()
     {
         $this->setMockHttpResponse('AuthorizeDeclined.txt');
