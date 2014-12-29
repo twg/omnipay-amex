@@ -98,4 +98,25 @@ class GatewayTest extends GatewayTestCase
         $this->assertTrue($response->isApproved());
         $this->assertSame('Approved', $response->getMessage());
     }
+
+    public function testRefundApproved()
+    {
+        $this->setMockHttpResponse('RefundApproved.txt');
+        $request = $this->gateway->refund(array(
+          'amount' => '1.00',
+          'orderId' => '125',
+          'merchTxnRef' => '125/3',
+          'transactionNo' => '3925'
+        ));
+
+        $this->assertInstanceOf('\Omnipay\Amex\Message\RefundRequest', $request);
+        $this->assertSame('1.00', $request->getAmount());
+
+        $response = $request->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('3926', $response->getTransactionReference());
+        $this->assertTrue($response->isApproved());
+        $this->assertSame('Approved', $response->getMessage());
+    }
 }
